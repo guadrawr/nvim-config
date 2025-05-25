@@ -59,4 +59,15 @@ return {
             require "configs.mason-conform"
         end,
     },
+
+    {
+        "nvim-tree/nvim-tree.lua",
+        lazy = false,
+        opts = {
+            view = {
+                side = "left",
+                width = 20,
+            },
+        },
+    },
 }

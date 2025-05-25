@@ -9,6 +9,10 @@ if not vim.uv.fs_stat(lazypath) then
     vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
 
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "number"
+vim.opt.swapfile = false
 vim.opt.rtp:prepend(lazypath)
 
 local lazy_config = require "configs.lazy"
@@ -35,3 +39,8 @@ require "nvchad.autocmds"
 vim.schedule(function()
     require "mappings"
 end)
+
+vim.opt.shell = "pwsh"
+vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+vim.opt.shellquote = ""
+vim.opt.shellxquote = ""
